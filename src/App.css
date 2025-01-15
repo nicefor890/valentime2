@@ -1,0 +1,77 @@
+.valentine-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.valentine-container::before,
+.valentine-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  opacity: 0.6;
+  animation: glitter-move 5s infinite linear;
+}
+
+.valentine-container::after {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  opacity: 0.8;
+  animation-duration: 7s;
+}
+
+@keyframes glitter-move {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(50px) translateY(50px);
+  }
+  100% {
+    transform: translateX(-50px) translateY(-50px);
+  }
+}
+
+.text {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 20px;
+  color: #ff69b4;
+  text-shadow: 1px 1px 3px #ff1493;
+  margin: 10px 0;
+}
+
+.yesButton,
+.noButton {
+  font-family: "Lobster", cursive;
+  background-color: #32cd32;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin: 5px;
+}
+
+.yesButton:hover {
+  background-color: #28a745;
+}
+
+.noButton:hover {
+  background-color: #e03c00;
+}
